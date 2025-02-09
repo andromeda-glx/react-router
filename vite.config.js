@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/react-router',
+  base: "/react-router/",
 });
