@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 export default function Header({currentPage = "home"}) {
@@ -8,10 +9,10 @@ export default function Header({currentPage = "home"}) {
                     <h2 className="font-bold text-2xl">#VANLIFE</h2>
                 </Link>
             </div>
-            <div className="flex gap-x-2 font-semibold">
+            <nav className="flex gap-x-2 font-semibold">
                 <Link to="/about" className={currentPage === 'about' && "underline"}>About</Link>
                 <Link to="/vans" className={currentPage === 'vans' && "underline"}>Vans</Link>
-            </div>
+            </nav>
         </header>
     )
 }
