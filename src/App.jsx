@@ -7,7 +7,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/react-router" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/vans" element={<Vans />} />
             </Routes>
