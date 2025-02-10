@@ -5,7 +5,7 @@ export default function Header({currentPage = "home"}) {
     return (
         <header className="flex items-center justify-between px-10 py-5 max-w-[1000px] mx-auto">
             <div className="">
-                <Link to="/react-router">
+                <Link to="/">
                     <h2 className="font-bold text-2xl">#VANLIFE</h2>
                 </Link>
             </div>

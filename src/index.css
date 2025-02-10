@@ -5,6 +5,10 @@
     --color-secondary: #FF8C38;
     --color-tertiary: #FFCC8D;
     --color-footer: #252525;
+    --color-filter-tab: #FFEAD0;
+    --color-type-simple: #E17654;
+    --color-type-rugged: #115E59;
+    --color-type-luxury: #161616;
 }
 
 body{
