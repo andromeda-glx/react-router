@@ -2,7 +2,6 @@ import Featured from "../components/Featured";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-/* eslint-disable react/prop-types */
 export default function Home() {
     return (
         <>

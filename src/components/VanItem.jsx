@@ -10,7 +10,7 @@ export default function VanItem({ name, img, price, type }) {
             <div className="px-5">
                 <div className="flex justify-between mb-2">
                     <h2 className="text-2xl">{name}</h2>
-                    <p>${price}</p>
+                    <p>${price}<span>/day</span></p>
                 </div>
                 <VanType type={type} />
             </div>
