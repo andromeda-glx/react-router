@@ -37,7 +37,7 @@ export default function Vans() {
                     {isLoading ? <Spinner /> :
                         <ul className="grid grid-cols-2 gap-5">
                             {vans.map(({ id, imageUrl, name, price, type }) => (
-                                <VanItem key={id} img={imageUrl} name={name} price={price} type={type} />
+                                <VanItem key={id} id={id} img={imageUrl} name={name} price={price} type={type} />
                             ))}
                         </ul>
                     }
