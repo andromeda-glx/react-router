@@ -3,7 +3,7 @@ import Explore from "../components/Explore";
 
 export default function About() {
     return (
-        <main className="max-w-[1000px] mx-auto px-10 h-dvh">
+        <>
             <div className="w-full">
                 <img className="w-full" src={img} alt="van life" />
             </div>
@@ -20,6 +20,6 @@ export default function About() {
                 </p>
                 <Explore text="Your destination is waiting. Your van is ready." />
             </article>
-        </main>
+        </>
     )
 }

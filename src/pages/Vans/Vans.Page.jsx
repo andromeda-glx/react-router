@@ -17,7 +17,7 @@ export default function Vans() {
     }, []);
 
     return (
-        <main className="max-w-[1000px] mx-auto px-10 h-auto my-10">
+        <>
             <h1 className="text-3xl font-semibold">Explore our van options</h1>
             <nav className="my-5 w-full flex justify-between">
                 <ul className="flex gap-5">
@@ -38,6 +38,6 @@ export default function Vans() {
                     </ul>
                 }
             </div>
-        </main>
+        </>
     )
 }
