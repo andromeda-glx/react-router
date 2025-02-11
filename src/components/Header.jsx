@@ -10,8 +10,8 @@ export default function Header({currentPage = "home"}) {
                 </Link>
             </div>
             <nav className="flex gap-x-2 font-semibold">
-                <Link to="/about" className={currentPage === 'about' && "underline"}>About</Link>
-                <Link to="/vans" className={currentPage === 'vans' && "underline"}>Vans</Link>
+                <Link to="/about" className={currentPage === 'about' ? "underline" : undefined}>About</Link>
+                <Link to="/vans" className={currentPage === 'vans' ? "underline" : undefined}>Vans</Link>
             </nav>
         </header>
     )

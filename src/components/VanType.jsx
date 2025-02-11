@@ -19,7 +19,7 @@ export default function VanType({ type }) {
 
     return (
         <div className={`${typeColor(type)} text-white inline-block px-2 py-1 rounded-md`}>
-            {type}
+            {type && type.charAt(0).toUpperCase() + type.slice(1)}
         </div>
     )
 }
