@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home.Page"
 import About from "./pages/About.Page"
-import Vans from "./pages/Vans.Page"
-import VanDetails from "./pages/VanDetails.Page"
+import Vans from "./pages/Vans/Vans.Page"
+import VanDetails from "./pages/Vans/VanDetails.Page"
 import Layout from "./components/Layout"
 
 function App() {

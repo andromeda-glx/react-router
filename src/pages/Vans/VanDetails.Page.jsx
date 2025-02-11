@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Spinner from "../components/Spinner";
-import VanType from "../components/VanType";
-import Button from "../components/Button";
+import Spinner from "../../components/Spinner";
+import VanType from "./VanType";
+import Button from "../../components/Button";
 
 export default function VanDetails() {
     const [van, setVan] = useState({});

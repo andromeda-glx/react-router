@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import FilterTab from "../components/FilterTab";
-import VanItem from "../components/VanItem";
-import Spinner from "../components/Spinner";
+import FilterTab from "../../components/FilterTab";
+import VanItem from "./VanItem";
+import Spinner from "../../components/Spinner";
 
 export default function Vans() {
     const [vans, setVans] = useState([]);
