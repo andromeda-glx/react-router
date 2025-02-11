@@ -9,7 +9,8 @@ export default function Header() {
                     <h2 className="font-bold text-2xl">#VANLIFE</h2>
                 </Link>
             </div>
-            <nav className="flex gap-x-2 font-semibold">
+            <nav className="flex gap-x-5">
+                <Link to="/host" className="hover:underline">Host</Link>
                 <Link to="/about" className="hover:underline" >About</Link>
                 <Link to="/vans" className="hover:underline">Vans</Link>
             </nav>
