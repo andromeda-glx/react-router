@@ -9,12 +9,14 @@ import HostLayout from "./components/HostLayout"
 import Income from "./pages/Host/Income.Page"
 import HostVans from "./pages/Host/HostVans.Page"
 import Reviews from "./pages/Host/Reviews.Page"
+import NotFound from "./pages/NotFound"
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout />}>
+                    <Route path="*" element={<NotFound />} />
                     <Route index element={<Home />} />
                     <Route path="about" element={<About />} />
                     <Route path="vans" element={<Vans />} />
