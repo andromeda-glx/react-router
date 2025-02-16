@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
     return (
@@ -9,10 +9,28 @@ export default function Header() {
                     <h2 className="font-bold text-2xl">#VANLIFE</h2>
                 </Link>
             </div>
-            <nav className="flex gap-x-5">
-                <Link to="/host" className="hover:underline">Host</Link>
-                <Link to="/about" className="hover:underline" >About</Link>
-                <Link to="/vans" className="hover:underline">Vans</Link>
+            <nav className="main-nav flex gap-x-5">
+                <NavLink
+                    to="host"
+                    // style={(isActive) => isActive ? activeStyle : undefined}
+                    className={({isActive}) => isActive ? "underline font-bold" : undefined}
+                >
+                    Host
+                </NavLink>
+                <NavLink
+                    to="about"
+                    // style={(isActive) => isActive ? activeStyle : undefined}
+                    className={({isActive}) => isActive ? "underline font-bold" : undefined}
+                >
+                    About
+                </NavLink>
+                <NavLink
+                    to="vans"
+                    // style={(isActive) => isActive ? activeStyle : undefined}
+                    className={({isActive}) => isActive ? "underline font-bold" : undefined}
+                >
+                    Vans
+                </NavLink>
             </nav>
         </header>
     )
