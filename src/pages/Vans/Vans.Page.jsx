@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
 import FilterTab from "../../components/FilterTab";
 import VanItem from "./VanItem";
 import Spinner from "../../components/Spinner";
+import useFetchData from "../../hooks/useFetchData";
 
 export default function Vans() {
-    const [vans, setVans] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-        setIsLoading(true);
-        fetch('/api/vans')
-            .then(res => res.json())
-            .then(data => setVans([...data.vans]))
-            .catch(e => console.log(e))
-            .finally(() => setIsLoading(false));
-    }, []);
+    const { data, error, isLoading } = useFetchData('/api/vans');
 
     return (
         <>
@@ -30,12 +20,13 @@ export default function Vans() {
                 </button>
             </nav>
             <div className="flex justify-center">
-                {isLoading ? <Spinner /> :
+                {!error ? isLoading ? <Spinner /> :
                     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
-                        {vans.map(({ id, imageUrl, name, price, type }) => (
+                        {data?.vans && data.vans.map(({ id, imageUrl, name, price, type }) => (
                             <VanItem key={id} id={id} img={imageUrl} name={name} price={price} type={type} />
                         ))}
                     </ul>
+                    : <p>Network Error</p>
                 }
             </div>
         </>

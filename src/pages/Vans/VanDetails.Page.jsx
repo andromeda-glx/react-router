@@ -1,38 +1,28 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Spinner from "../../components/Spinner";
 import VanType from "./VanType";
 import Button from "../../components/Button";
+import useFetchData from "../../hooks/useFetchData";
 
 export default function VanDetails() {
-    const [van, setVan] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
-
     const params = useParams();
     const id = params.id;
-
-    useEffect(() => {
-        setIsLoading(true);
-        fetch(`/api/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setVan(data.vans))
-            .catch(e => console.log(e))
-            .finally(() => setIsLoading(false));
-    }, []);
+    const {data, isLoading, error} = useFetchData(`/api/vans/${id}`);
 
     return (
         <div className="w-full flex justify-center">
-            {isLoading ? <Spinner /> :
-                <div className="w-full mx-auto">
+            {!error ? isLoading ? <Spinner /> :
+                data && <div className="w-full mx-auto">
                     <div className="w-full flex justify-center mb-10">
-                        <img className="h-full rounded-lg" src={van.imageUrl} alt={van.name} />
+                        <img className="h-full rounded-lg" src={data.vans.imageUrl} alt={data.vans.name} />
                     </div>
-                    <VanType type={van.type} />
-                    <h1 className="text-4xl font-semibold mt-5">{van.name}</h1>
-                    <h2 className="text-2xl font-bold inline-block mt-5">${van.price}</h2><span>/day</span>
-                    <p className="my-5">{van.description}</p>
+                    <VanType type={data.vans.type} />
+                    <h1 className="text-4xl font-semibold mt-5">{data.vans.name}</h1>
+                    <h2 className="text-2xl font-bold inline-block mt-5">${data.vans.price}</h2><span>/day</span>
+                    <p className="my-5">{data.vans.description}</p>
                     <Button text={"Rent this van"} />
                 </div>
+                : <p>Network Error</p>
             }
         </div>
     )
