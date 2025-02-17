@@ -11,6 +11,7 @@ import HostVans from "./pages/Host/Vans/HostVans.Page"
 import Reviews from "./pages/Host/Reviews.Page"
 import NotFound from "./pages/NotFound"
 import VanDetailsPage from "./pages/Host/Vans/VanDetailsPage"
+import Details from "./pages/Host/Vans/Details"
 
 function App() {
     return (
@@ -27,7 +28,9 @@ function App() {
                         <Route index element={<Dashboard />} />
                         <Route path="income" element={<Income />} />
                         <Route path="vans" element={<HostVans />} />
-                        <Route path="vans/:id" element={<VanDetailsPage />} />
+                        <Route path="vans/:id" element={<VanDetailsPage />}>
+                            <Route index element={<Details />} />
+                        </Route>
                         <Route path="reviews" element={<Reviews />} />
                     </Route>
                 </Route>

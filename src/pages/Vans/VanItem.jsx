@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import VanType from "./VanType";
+import VanType from "../../components/VanType";
 
 /* eslint-disable react/prop-types */
 export default function VanItem({ id, name, img, price, type }) {

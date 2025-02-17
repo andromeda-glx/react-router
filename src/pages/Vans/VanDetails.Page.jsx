@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Spinner from "../../components/Spinner";
-import VanType from "./VanType";
+import VanType from "../../components/VanType";
 import Button from "../../components/Button";
 import useFetchData from "../../hooks/useFetchData";
 
