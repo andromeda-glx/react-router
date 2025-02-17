@@ -7,17 +7,17 @@ export default function Photos() {
     const { data, isLoading, error } = useFetchData(`/api/vans/${id}`);
 
     return (
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 overflow-y-auto p-1">
             {!error ? isLoading ? <Spinner /> : data?.vans &&
                 <>
                     <div className="w-[100%]">
-                        <img className="w-[100%]" src={data.vans.imageUrl} alt={data.vans.name} />
+                        <img className="w-[100%] rounded-lg" src={data.vans.imageUrl} alt={data.vans.name} />
                     </div>
                     <div className="w-[100%]">
-                        <img className="w-[100%]" src={data.vans.imageUrl} alt={data.vans.name} />
+                        <img className="w-[100%] rounded-lg" src={data.vans.imageUrl} alt={data.vans.name} />
                     </div>
                     <div className="w-[100%]">
-                        <img className="w-[100%]" src={data.vans.imageUrl} alt={data.vans.name} />
+                        <img className="w-[100%] rounded-lg" src={data.vans.imageUrl} alt={data.vans.name} />
                     </div>
                 </>
                 : <p>Network Error</p>}

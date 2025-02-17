@@ -12,18 +12,18 @@ export default function Details() {
     return (
         <div className="">
             {!error ? isLoading ? <Spinner /> : data?.vans &&
-                <div className="flex flex-col gap-y-2">
+                <div className="flex flex-col gap-y-3">
                     <p>
-                        <span className="font-semibold">Name: </span> {data.vans.name}
+                        <span className="font-bold">Name: </span> {data.vans.name}
                     </p>
                     <p>
-                        <span className="font-semibold">Category: </span> {data.vans.type}
+                        <span className="font-bold">Category: </span> {data.vans.type}
                     </p>
                     <p>
-                        <span className="font-semibold">Description: </span> {data.vans.description}
+                        <span className="font-bold">Description: </span> {data.vans.description}
                     </p>
                     <p>
-                        <span className="font-semibold">Visibility: </span> {data.vans.visibility}
+                        <span className="font-bold">Visibility: </span> Public
                     </p>
                 </div>
             : <p>Network Error</p>}
