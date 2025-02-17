@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 @theme{
@@ -9,10 +10,12 @@
     --color-type-simple: #E17654;
     --color-type-rugged: #115E59;
     --color-type-luxury: #161616;
+    --font-inter: "Inter", arial;
 }
 
 body{
     background-color: #FFF7ED;
+    @apply font-inter;
 }
 
 .main-nav > a:hover{
