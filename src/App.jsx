@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound"
 import VanDetailsPage from "./pages/Host/Vans/VanDetailsPage"
 import Details from "./pages/Host/Vans/Details"
 import Pricing from "./pages/Host/Vans/Pricing"
+import Photos from "./pages/Host/Vans/Photos"
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                         <Route path="vans/:id" element={<VanDetailsPage />}>
                             <Route index element={<Details />} />
                             <Route path="pricing" element={<Pricing />} />
+                            <Route path="photos" element={<Photos />} />
                         </Route>
                         <Route path="reviews" element={<Reviews />} />
                     </Route>

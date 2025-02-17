@@ -15,7 +15,7 @@ export default function Navbar() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={''}>
+                    <NavLink to={'photos'} className={({isActive}) => isActive ? "font-bold underline" : undefined}>
                         Photos
                     </NavLink>
                 </li>

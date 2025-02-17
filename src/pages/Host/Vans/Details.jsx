@@ -6,6 +6,9 @@ export default function Details() {
     const { id } = useParams();
     const { data, isLoading, error } = useFetchData(`/api/vans/${id}`);
 
+    console.log(data?.vans);
+    
+
     return (
         <div className="">
             {!error ? isLoading ? <Spinner /> : data?.vans &&
