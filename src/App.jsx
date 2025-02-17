@@ -7,10 +7,10 @@ import Layout from "./components/Layout"
 import Dashboard from "./pages/Host/Dashboard.Page"
 import HostLayout from "./components/HostLayout"
 import Income from "./pages/Host/Income.Page"
-import HostVans from "./pages/Host/HostVans.Page"
+import HostVans from "./pages/Host/Vans/HostVans.Page"
 import Reviews from "./pages/Host/Reviews.Page"
 import NotFound from "./pages/NotFound"
-import VanDetailsPage from "./pages/Host/VanDetailsPage"
+import VanDetailsPage from "./pages/Host/Vans/VanDetailsPage"
 
 function App() {
     return (

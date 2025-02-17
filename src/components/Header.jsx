@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
@@ -12,21 +11,18 @@ export default function Header() {
             <nav className="main-nav flex gap-x-5">
                 <NavLink
                     to="host"
-                    // style={(isActive) => isActive ? activeStyle : undefined}
                     className={({isActive}) => isActive ? "underline font-bold" : undefined}
                 >
                     Host
                 </NavLink>
                 <NavLink
                     to="about"
-                    // style={(isActive) => isActive ? activeStyle : undefined}
                     className={({isActive}) => isActive ? "underline font-bold" : undefined}
                 >
                     About
                 </NavLink>
                 <NavLink
                     to="vans"
-                    // style={(isActive) => isActive ? activeStyle : undefined}
                     className={({isActive}) => isActive ? "underline font-bold" : undefined}
                 >
                     Vans
