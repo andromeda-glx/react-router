@@ -1,16 +1,13 @@
-import { useParams } from "react-router-dom"
-import useFetchData from "../../../hooks/useFetchData";
-import Spinner from "../../../components/Spinner";
+import { useOutletContext } from "react-router-dom"
 
 export default function Details() {
-    const { id } = useParams();
-    const { data, isLoading, error } = useFetchData(`/api/host/vans/${id}`);
+    const { data } = useOutletContext();
 
     const van = data?.vans;
 
     return (
         <div className="">
-            {!error ? isLoading ? <Spinner /> : van &&
+            { van &&
                 <div className="flex flex-col gap-y-3">
                     <p>
                         <span className="font-bold">Name: </span> {van.name}
@@ -25,7 +22,7 @@ export default function Details() {
                         <span className="font-bold">Visibility: </span> Public
                     </p>
                 </div>
-            : <p>Network Error</p>}
+                }
         </div>
     )
 }

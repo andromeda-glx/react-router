@@ -19,7 +19,7 @@ export default function VanDetailsPage() {
         <>
             {/* relative property here is used to navigate back to the previous page (parent) not according to the route structure we made in the App.jsx but to the URL structure. relative property is also available to <Link relative="path" ></Link> */}
             <span className="flex items-center gap-x-3 mb-5 hover:underline cursor-pointer"
-                onClick={() => navigate('..', {relative: "path"})}
+                onClick={() => navigate('..', { relative: "path" })}
             >
                 <FontAwesomeIcon icon={faArrowLeft} />
                 <p>Back to all vans</p>
@@ -42,7 +42,7 @@ export default function VanDetailsPage() {
                             <Navbar />
                         </div>
                         <div className="">
-                            <Outlet />
+                            <Outlet context={{ data }} />
                         </div>
                     </div>
                     :
