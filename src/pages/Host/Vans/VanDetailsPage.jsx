@@ -10,14 +10,17 @@ export default function VanDetailsPage() {
     const { id } = useParams();
     const { data, error, isLoading } = useFetchData(`/api/host/vans/${id}`);
     console.log(data);
-    
+
     const van = data?.vans;
-    
+
     const navigate = useNavigate();
 
     return (
         <>
-            <span className="flex items-center gap-x-3 mb-5 hover:underline cursor-pointer" onClick={() => navigate('../vans')} >
+            {/* relative property here is used to navigate back to the previous page (parent) not according to the route we made in the App.jsx but to the URL address. relative property is also available to <Link relative="path" ></Link> */}
+            <span className="flex items-center gap-x-3 mb-5 hover:underline cursor-pointer"
+                onClick={() => navigate('..', {relative: "path"})}
+            >
                 <FontAwesomeIcon icon={faArrowLeft} />
                 <p>Back to all vans</p>
             </span>
