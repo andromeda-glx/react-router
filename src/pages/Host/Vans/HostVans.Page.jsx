@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react";
+import useFetchData from "../../../hooks/useFetchData"
 import VanItem from "./VanItem";
 import { Link } from "react-router-dom";
+import Spinner from "../../../components/Spinner";
 
 export default function HostVans() {
-    const [vans, setVans] = useState([]);
-    const ownedVansIDs = ["1", "2", "6"];
-
-    async function fetchData() {
-        ownedVansIDs.forEach(async (id) => {
-            const res = await fetch(`/api/vans/${id}`);
-            const data = await res.json();
-            setVans(prev => [...prev, data.vans]);
-        })
-    }
-
-    useEffect(() => {
-        fetchData();
-
-        return setVans([]);
-    }, []);
+    const { data, isLoading, error } = useFetchData('/api/host/vans');
 
     return (
         <div className="">
@@ -27,15 +13,15 @@ export default function HostVans() {
                 <div
                     className="flex flex-col gap-y-4"
                 >
-                    {
-                        vans.map(({ id, imageUrl, name, price }) => {
+                    {!error ? isLoading ? <Spinner /> :
+                        data && data?.vans.map(({ id, imageUrl, name, price }) => {
                             return (
                                 <Link key={id} to={id}>
                                     <VanItem imgURL={imageUrl} title={name} price={price} />
                                 </Link>
                             )
                         })
-                    }
+                    : <p>Network Error</p>}
                 </div>
             </ul>
         </div>
