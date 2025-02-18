@@ -6,7 +6,7 @@ export default function Pricing() {
     const { id } = useParams();
     const { data, error, isLoading } = useFetchData(`/api/host/vans/${id}`);
 
-    const van = data?.vans[0];
+    const van = data?.vans;
 
     return (
         <div>

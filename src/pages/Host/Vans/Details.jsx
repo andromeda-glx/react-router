@@ -6,7 +6,7 @@ export default function Details() {
     const { id } = useParams();
     const { data, isLoading, error } = useFetchData(`/api/host/vans/${id}`);
 
-    const van = data?.vans[0];
+    const van = data?.vans;
 
     return (
         <div className="">
