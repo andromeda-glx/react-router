@@ -8,7 +8,9 @@ import Navbar from "./Navbar";
 
 export default function VanDetailsPage() {
     const { id } = useParams();
-    const { data, error, isLoading } = useFetchData(`/api/vans/${id}`);
+    const { data, error, isLoading } = useFetchData(`/api/host/vans/${id}`);
+    const van = data?.vans[0];
+    
     const navigate = useNavigate();
 
     return (
@@ -19,16 +21,16 @@ export default function VanDetailsPage() {
             </span>
             <div className="bg-white p-10 rounded-lg flex flex-col items-center">
                 {!error ? isLoading ? <Spinner />
-                    : data?.vans &&
+                    : van &&
                     <div className="flex flex-col gap-y-7">
                         <div className="flex items-center gap-x-5">
                             <div className="w-[40%]">
-                                <img src={data.vans.imageUrl} alt={data.vans.name} />
+                                <img src={van.imageUrl} alt={van.name} />
                             </div>
                             <div className="flex flex-col gap-y-4 items-start">
-                                <VanType type={data.vans.type} />
-                                <h2 className="text-3xl font-semibold">{data.vans.name}</h2>
-                                <p className="text-xl font-semibold">${data.vans.price}/day</p>
+                                <VanType type={van.type} />
+                                <h2 className="text-3xl font-semibold">{van.name}</h2>
+                                <p className="text-xl font-semibold">${van.price}/day</p>
                             </div>
                         </div>
                         <div className="">

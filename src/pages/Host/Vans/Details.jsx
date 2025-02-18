@@ -4,23 +4,22 @@ import Spinner from "../../../components/Spinner";
 
 export default function Details() {
     const { id } = useParams();
-    const { data, isLoading, error } = useFetchData(`/api/vans/${id}`);
+    const { data, isLoading, error } = useFetchData(`/api/host/vans/${id}`);
 
-    console.log(data?.vans);
-    
+    const van = data?.vans[0];
 
     return (
         <div className="">
-            {!error ? isLoading ? <Spinner /> : data?.vans &&
+            {!error ? isLoading ? <Spinner /> : van &&
                 <div className="flex flex-col gap-y-3">
                     <p>
-                        <span className="font-bold">Name: </span> {data.vans.name}
+                        <span className="font-bold">Name: </span> {van.name}
                     </p>
                     <p>
-                        <span className="font-bold">Category: </span> {data.vans.type}
+                        <span className="font-bold">Category: </span> {van.type}
                     </p>
                     <p>
-                        <span className="font-bold">Description: </span> {data.vans.description}
+                        <span className="font-bold">Description: </span> {van.description}
                     </p>
                     <p>
                         <span className="font-bold">Visibility: </span> Public
