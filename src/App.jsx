@@ -17,7 +17,7 @@ import Photos from "./pages/Host/Vans/Photos"
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/react-router/" >
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
