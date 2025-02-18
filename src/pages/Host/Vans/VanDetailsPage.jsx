@@ -17,7 +17,7 @@ export default function VanDetailsPage() {
 
     return (
         <>
-            {/* relative property here is used to navigate back to the previous page (parent) not according to the route we made in the App.jsx but to the URL address. relative property is also available to <Link relative="path" ></Link> */}
+            {/* relative property here is used to navigate back to the previous page (parent) not according to the route structure we made in the App.jsx but to the URL structure. relative property is also available to <Link relative="path" ></Link> */}
             <span className="flex items-center gap-x-3 mb-5 hover:underline cursor-pointer"
                 onClick={() => navigate('..', {relative: "path"})}
             >
