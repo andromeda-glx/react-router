@@ -5,7 +5,7 @@ export default function Navbar() {
         <nav>
             <ul className="flex gap-x-6">
                 <li>
-                    <NavLink end to={''} className={({isActive}) => isActive ? "font-bold underline" : undefined}>
+                    <NavLink end to={'.'} className={({isActive}) => isActive ? "font-bold underline" : undefined}>
                         Details
                     </NavLink>
                 </li>

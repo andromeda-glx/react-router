@@ -13,7 +13,7 @@ export default function HostLayout() {
                     // className={(isActive) => isActive ? "underline font-semibold" : undefined}
                     style={({ isActive }) => isActive ? style : undefined}
                     end
-                    to='/host'
+                    to='.'
                 >
                     Dashboard
                 </NavLink>
