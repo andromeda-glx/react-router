@@ -19,19 +19,25 @@ export default function Vans() {
             <h1 className="text-3xl font-semibold">Explore our van options</h1>
             <nav className="my-5 w-full flex justify-between">
                 <ul className="flex gap-5">
-                    <Link to={"?type=simple"}>
-                        <FilterTab text={"Simple"} hover={"hover:bg-[#E17654]"} />
-                    </Link>
-                    <Link to={"?type=luxury"}>
-                        <FilterTab text={"Luxury"} hover={"hover:bg-[#161616]"} />
-                    </Link>
-                    <Link to={"?type=rugged"}>
-                        <FilterTab text={"Rugged"} hover={"hover:bg-[#115E59]"} />
-                    </Link>
+                    <FilterTab
+                        text={"Simple"}
+                        hover={"hover:bg-[#E17654]"}
+                        click={() => setSearchParams({type: "simple"})}
+                    />
+                    <FilterTab
+                        text={"Luxury"}
+                        hover={"hover:bg-[#161616]"}
+                        click={() => setSearchParams({type: "luxury"})}
+                    />
+                    <FilterTab
+                        text={"Rugged"}
+                        hover={"hover:bg-[#115E59]"}
+                        click={() => setSearchParams({type: "rugged"})}
+                    />
                 </ul>
-                <Link to={"."} className="underline">
+                <button className="underline cursor-pointer" onClick={() => setSearchParams({})}>
                     Clear filters
-                </Link>
+                </button>
             </nav>
             <div className="flex justify-center">
                 {!error ? isLoading ? <Spinner /> :
